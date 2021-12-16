@@ -2,28 +2,24 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 const Contador = () => {
-    const [cont, setCont] =useState(0);
-	useEffect(() => {
+	const [cont, setCont] = useState(0);
+	useEffect(() => {}, [cont]);
 
-    },[cont]);
+	const increment = () => {
+		if (cont < 20) setCont(cont + 1);
+	};
 
-    const increment =() =>{
-        if (cont < 20)
-            setCont(cont+1);
-    }
+	const decrement = () => {
+		if (cont > 0) setCont(cont - 1);
+	};
 
-    const decrement =() =>{
-        if (cont > 0)
-            setCont(cont-1);
-    }
-
-	return( 
-    <>
-    <h1>Contador: {cont}</h1>
-    <button onClick={increment}>Aumentar</button>
-    <button onClick={decrement}>Disminuir</button>
-    </>
-    );
+	return (
+		<>
+			<h6>{cont}</h6>
+			<button type="button" class="btn btn-primary btn-sm" onClick={increment}>+</button>
+			<button type="button" class="btn btn-primary btn-sm" onClick={decrement}>-</button>
+		</>
+	);
 };
 
 export default Contador;
