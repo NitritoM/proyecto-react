@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Item from "./Item";
 
 const Itemlist = [
@@ -8,16 +8,21 @@ const Itemlist = [
 ];
 
 const ItemContainer = (props) => {
-	const Showitems = new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve(() => {
-				for (const name in Itemlist) {
+	const [state, setState] = useState([]);
 
-					<Item name={Itemlist.name} project={Itemlist.project} place={Itemlist.place} />;
-				}
-			});
-		}, 2000);
+	const getData = new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve([
+				{ name: "111", project: "222", place: "333" },
+				{ name: "aaa", project: "sss", place: "ddd" },
+				{ name: "zzz", project: "xxx", place: "ccc" },
+			]);
+		}, 3000);
 	});
+
+	useEffect(() => {
+		getData.then((res) => setState(res));
+	}, []);
 
 	return (
 		<>
@@ -27,11 +32,9 @@ const ItemContainer = (props) => {
 						<div class="row">
 							<div class="col-md-12 col-lg-8">
 								<div class=".printshop__items">
-									{Showitems}
-
-									{/* <Item name="111" project="222" place="333" />
-									<Item name="222" project="333" place="444" />
-									<Item name="333" project="444" place="555" /> */}
+									{state.map((value) => {
+										return <Item name={value.name} project={value.project} place={value.place} />;
+									})}
 								</div>
 							</div>
 							<div class="col-md-12 col-lg-4">
