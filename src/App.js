@@ -15,16 +15,7 @@ function App() {
 				<br />
 				<br />
 				<br />
-				<Cart />
-				<br />
-				<br />
-				<br />
-				<Contador />
-				<br />
-				<br />
-				<br />
 				<ItemContainer/>
-				
 			</>
 		</div>
 	);

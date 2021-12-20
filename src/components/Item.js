@@ -4,36 +4,36 @@ import Contador from "./ItemCount";
 const Item = (props) => {
 	return (
 		<>
-			<div class=".items__product pb-4">
-				<div class="row">
-					<div class="col-md-8 pb-4">
-						<div class="product__info">
-							<div class="row">
-								<div class="col-md-5 info__product-name">
-									<div class="info__product-name">
+			<div className=".items__product pb-4">
+				<div className="row">
+					<div className="col-md-8 pb-4">
+						<div className="product__info">
+							<div className="row">
+								<div className="col-md-5 info__product-name">
+									<div className="info__product-name">
 										<a href="#">{props.name}</a>
-										<div class="product-name__product-info">
+										<div className="product-name__product-info">
 											<div>
-												Proyect: <span class="product-info__value">{props.project}</span>
+												Project: <span className="product-info__value">{props.project}</span>
 											</div>
 											<div>
-												Place: <span class="product-info__value">{props.place}</span>
+												Place: <span className="product-info__value">{props.place}</span>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4 info__quantity">
+								<div className="col-md-4 info__quantity">
 									<label for="quantity">Quantity:</label>
 									<Contador />
 								</div>
-								<div class="col-md-3 info__price">
+								<div className="col-md-3 info__price">
 									<span>$120</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3">
-						<img class="img-fluid mx-auto d-block image" src="#" alt="Imagen3" />
+					<div className="col-md-3">
+						<img className="img-fluid mx-auto d-block image" src={props.img} alt="Imagen3" />
 					</div>
 				</div>
 			</div>

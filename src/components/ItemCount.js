@@ -16,8 +16,8 @@ const Contador = () => {
 	return (
 		<>
 			<h6>{cont}</h6>
-			<button type="button" class="btn btn-primary btn-sm" onClick={increment}>+</button>
-			<button type="button" class="btn btn-primary btn-sm" onClick={decrement}>-</button>
+			<button type="button" className="btn btn-primary btn-sm" onClick={increment}>+</button>
+			<button type="button" className="btn btn-primary btn-sm" onClick={decrement}>-</button>
 		</>
 	);
 };

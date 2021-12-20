@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
 
-const Itemlist = [
-	{ name: "111", project: "222", place: "333" },
-	{ name: "aaa", project: "sss", place: "ddd" },
-	{ name: "zzz", project: "xxx", place: "ccc" },
-];
-
 const ItemContainer = (props) => {
 	const [state, setState] = useState([]);
 
 	const getData = new Promise((resolve, reject) => {
 		setTimeout(() => {
 			resolve([
-				{ name: "111", project: "222", place: "333" },
-				{ name: "aaa", project: "sss", place: "ddd" },
-				{ name: "zzz", project: "xxx", place: "ccc" },
+				{ id: 1, name: "111", project: "222", place: "333", img: "img/ASFWP (1).jpg" },
+				{ id: 2, name: "aaa", project: "sss", place: "ddd", img: "img/ASFWP (2).jpg" },
+				{ id: 3, name: "zzz", project: "xxx", place: "ccc", img: "img/ASFWP (3).jpg" },
 			]);
-		}, 3000);
+		}, 2000);
 	});
 
 	useEffect(() => {
@@ -26,37 +20,38 @@ const ItemContainer = (props) => {
 
 	return (
 		<>
-			<section class="printshop printshop--dark m-3">
-				<div class="container">
-					<div class="printshop__content">
-						<div class="row">
-							<div class="col-md-12 col-lg-8">
-								<div class=".printshop__items">
+			<section className="printshop printshop--dark m-3">
+				<div className="container">
+					<div className="printshop__content">
+						<div className="row">
+							<div className="col-md-12 col-lg-8">
+								<div className=".printshop__items">
 									{state.map((value) => {
-										return <Item name={value.name} project={value.project} place={value.place} />;
+										console.log(value.img);
+										return <Item key={value.id} name={value.name} project={value.project} place={value.place} img={value.img} />;
 									})}
 								</div>
 							</div>
-							<div class="col-md-12 col-lg-4">
-								<div class="printshop__summary">
+							<div className="col-md-12 col-lg-4">
+								<div className="printshop__summary">
 									<h3>Summary</h3>
-									<div class="summary__summary-item">
-										<span class="summary__text">Subtotal</span>
-										<span class="summary__price">$360</span>
+									<div className="summary__summary-item">
+										<span className="summary__text">Subtotal</span>
+										<span className="summary__price">$360</span>
 									</div>
-									<div class="summary__summary-item">
-										<span class="summary__text">Discount</span>
-										<span class="summary__price">$0</span>
+									<div className="summary__summary-item">
+										<span className="summary__text">Discount</span>
+										<span className="summary__price">$0</span>
 									</div>
-									<div class="summary__summary-item">
-										<span class="summary__text">Shipping</span>
-										<span class="summary__price">$0</span>
+									<div className="summary__summary-item">
+										<span className="summary__text">Shipping</span>
+										<span className="summary__price">$0</span>
 									</div>
-									<div class="summary__summary-item">
-										<span class="summary__text">Total</span>
-										<span class="summary__price">$360</span>
+									<div className="summary__summary-item">
+										<span className="summary__text">Total</span>
+										<span className="summary__price">$360</span>
 									</div>
-									<button type="button" class="btn btn-primary btn-lg btn-block">
+									<button type="button" className="btn btn-primary btn-lg btn-block">
 										Checkout
 									</button>
 								</div>
