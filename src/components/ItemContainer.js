@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
+import Summary from "./Summary";
 
 const ItemContainer = (props) => {
 	const [state, setState] = useState([]);
@@ -33,28 +34,7 @@ const ItemContainer = (props) => {
 								</div>
 							</div>
 							<div className="col-md-12 col-lg-4">
-								<div className="printshop__summary">
-									<h3>Summary</h3>
-									<div className="summary__summary-item">
-										<span className="summary__text">Subtotal</span>
-										<span className="summary__price">$360</span>
-									</div>
-									<div className="summary__summary-item">
-										<span className="summary__text">Discount</span>
-										<span className="summary__price">$0</span>
-									</div>
-									<div className="summary__summary-item">
-										<span className="summary__text">Shipping</span>
-										<span className="summary__price">$0</span>
-									</div>
-									<div className="summary__summary-item">
-										<span className="summary__text">Total</span>
-										<span className="summary__price">$360</span>
-									</div>
-									<button type="button" className="btn btn-primary btn-lg btn-block">
-										Checkout
-									</button>
-								</div>
+								<Summary/>
 							</div>
 						</div>
 					</div>
