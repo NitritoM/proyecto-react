@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Contador from "./ItemCount";
 
 const Item = (props) => {
@@ -33,7 +34,9 @@ const Item = (props) => {
 						</div>
 					</div>
 					<div className="col-md-3">
-						<img className="img-fluid mx-auto d-block image" src={props.img} alt="Imagen3" />
+						<NavLink to="/ItemDetailContainer" className="text-decoration-none navbar__item">
+							<img className="img-fluid mx-auto d-block image" src={props.img} alt="Imagen3" />
+						</NavLink>
 					</div>
 				</div>
 			</div>
