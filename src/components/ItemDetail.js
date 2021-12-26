@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const ItemDetail = (props) => {
 	return (
 		<>
 			<img className="img-fluid mx-auto d-block image" src={props.img} alt="Imagen3" />
 			<div className="info__product-name">
-				<a href="#">{props.name}</a>
+				<p>{props.name}</p>
 				<div className="product-name__product-info">
 					<div>
 						

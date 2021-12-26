@@ -1,19 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ItemContainer from "./ItemContainer";
+import { NavLink } from "react-router-dom";
+import 'animate.css' 
 
 function Navbar() {
 	return (
 		<ul className="list-unstyled components">
 			<li className="m-2 animate__animated animate__fadeInLeftBig">
-				<Link to="/" className="text-decoration-none navbar__item">
+				<NavLink to={`/ItemContainer/${0}`} className="text-decoration-none navbar__item">
 					Inicio
-				</Link>
+				</NavLink>
 			</li>
 			<li className="m-2 animate__animated animate__fadeInLeftBig">
-				<Link to="/ItemContainer" className="text-decoration-none navbar__item">
-					Item Container
-				</Link>
+				<NavLink to={`/ItemContainer/${1}`} className="text-decoration-none navbar__item">
+					Proyecto Danza
+				</NavLink>
+			</li>
+			<li className="m-2 animate__animated animate__fadeInLeftBig">
+				<NavLink to={`/ItemContainer/${2}`} className="text-decoration-none navbar__item">
+					Proyecto Vejez
+				</NavLink>
+			</li>
+			<li className="m-2 animate__animated animate__fadeInLeftBig">
+				<NavLink to={`/ItemContainer/${3}`} className="text-decoration-none navbar__item">
+					Proyecto Belleza
+				</NavLink>
 			</li>
 			{/* <li className="m-2 animate__animated animate__fadeInLeftBig">
 				<Link to="/" className="text-decoration-none navbar__item">

@@ -12,7 +12,7 @@ const Item = (props) => {
 							<div className="row">
 								<div className="col-md-5 info__product-name">
 									<div className="info__product-name">
-										<a href="#">{props.name}</a>
+										<p>{props.name}</p>
 										<div className="product-name__product-info">
 											<div>
 												Project: <span className="product-info__value">{props.project}</span>
@@ -34,7 +34,7 @@ const Item = (props) => {
 						</div>
 					</div>
 					<div className="col-md-3">
-						<NavLink to="/ItemDetailContainer" className="text-decoration-none navbar__item">
+						<NavLink to={`/ItemDetailContainer/${props.id}`} className="text-decoration-none navbar__item">
 							<img className="img-fluid mx-auto d-block image" src={props.img} alt="Imagen3" />
 						</NavLink>
 					</div>
