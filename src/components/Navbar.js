@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import 'animate.css' 
+import Animate from 'animate.css-react'
+import 'animate.css/animate.css' 
 
 function Navbar() {
 	return (
