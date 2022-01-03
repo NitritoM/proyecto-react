@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-
+import cartContext from "../context/cartContext";
 
 const ItemDetailContainer = (props) => {
 	const [state, setState] = useState([]);
 	const { Id } = useParams();
 	console.log(Id);
+
+	const value = useContext(cartContext);
 
 	const getData = new Promise((resolve, reject) => {
 		setTimeout(() => {

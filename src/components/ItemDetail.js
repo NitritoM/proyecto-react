@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import Contador from "./ItemCount";
+import cartContext from "../context/cartContext";
+
 
 const ItemDetail = (props) => {
-	window.addEventListener('click',()=>{
-        console.log("clcik padre")
-    })
-    const handleClick = ()=>{
-        
-    }
+	window.addEventListener("click", () => {
+		
+	});
+
+	let newItem = [];
+	const value = useContext(cartContext);
+	
+	const event = new CustomEvent("clickDetalle", { detal: { blubles: true } });
+
+	const handleClick = () => {
+		//indow.dispatchEvent(event);
+		value.addItem(props)
+		console.log(value);
+	
+	};
 
 	return (
 		<>
@@ -21,7 +32,6 @@ const ItemDetail = (props) => {
 					<div>
 						Place: <span className="product-info__value">{props.place}</span>
 					</div>
-				
 				</div>
 				<div className=" info__price m-4">
 					Precio : <span>{props.price}</span>
@@ -30,7 +40,9 @@ const ItemDetail = (props) => {
 					<Contador />
 				</div>
 				<div>
-				<button type="button" className="btn btn-primary btn-sm" onClick={handleClick} >Agregar al Carrito</button>
+					<button type="button" className="btn btn-primary btn-sm" onClick={handleClick}>
+						Agregar al Carrito
+					</button>
 				</div>
 			</div>
 		</>
