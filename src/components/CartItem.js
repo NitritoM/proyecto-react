@@ -4,18 +4,16 @@ import Contador from "./ItemCount";
 
 import cartContext from "../context/cartContext";
 
-const Item = (props) => {
+const CartItem = (props) => {
 	const value = useContext(cartContext);
-	
+
 	const event = new CustomEvent("clickDetalle", { detal: { blubles: true } });
 
-	const handleClick = () => {
+	const handleClick2 = () => {
 		//indow.dispatchEvent(event);
-		value.addItem(props)
-		console.log(value);
-	
+		value.removeItem(props);
 	};
-	
+
 	return (
 		<>
 			<div className=".items__product pb-4">
@@ -37,8 +35,8 @@ const Item = (props) => {
 									</div>
 								</div>
 								<div className="col-md-4 info__quantity">
-									<button type="button" className="btn btn-primary btn-sm" onClick={handleClick}>
-										Agregar al Carrito
+									<button type="button" className="btn btn-primary btn-sm" onClick={handleClick2}>
+										Eliminar del Carrito
 									</button>
 									{/* <label for="quantity">Quantity:</label>
 									<Contador /> */}
@@ -60,4 +58,4 @@ const Item = (props) => {
 	);
 };
 
-export default Item;
+export default CartItem;

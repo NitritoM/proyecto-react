@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext }  from "react";
 import { NavLink } from "react-router-dom";
-import 'animate.css/animate.css' 
+import cartContext from "../context/cartContext";
+import "animate.css/animate.css";
 
 function Navbar() {
+	const value = useContext(cartContext);
+	let auxarr = value.checkItem();
+    console.log(auxarr);
 	return (
 		<ul className="list-unstyled components">
 			<li className="m-2 animate__animated animate__fadeInLeftBig">
-				<NavLink to={`/ItemContainer/${0}`} className="text-decoration-none navbar__item">
+				<NavLink to={`/`} className="text-decoration-none navbar__item">
 					Inicio
+				</NavLink>
+			</li>
+			<li className="m-2 animate__animated animate__fadeInLeftBig">
+				<NavLink to={`/ItemContainer/${0}`} className="text-decoration-none navbar__item">
+					Todos los proyectos
 				</NavLink>
 			</li>
 			<li className="m-2 animate__animated animate__fadeInLeftBig">
@@ -24,17 +33,13 @@ function Navbar() {
 				<NavLink to={`/ItemContainer/${3}`} className="text-decoration-none navbar__item">
 					Proyecto Belleza
 				</NavLink>
-			</li>
-			{/* <li className="m-2 animate__animated animate__fadeInLeftBig">
-				<Link to="/" className="text-decoration-none navbar__item">
-					Inicio
-				</Link>
-			</li>
+			</li> 
 			<li className="m-2 animate__animated animate__fadeInLeftBig">
-				<Link to="/" className="text-decoration-none navbar__item">
-					Inicio
-				</Link>
-			</li> */}
+				<NavLink to={`/Cart`} className="text-decoration-none navbar__item">
+					Carrito {auxarr.length}
+				</NavLink>
+			</li> 
+			
 		</ul>
 	);
 }

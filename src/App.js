@@ -12,12 +12,13 @@ import "animate.css";
 import Home from "./components/Home";
 
 import CustomContext from "./components/customContext";
+import Cart from "./components/Cart";
 
 function App() {
 	return (
 		<CustomContext>
 			<Router>
-				<div className="App bg--black">
+				<div className="App bg--black h-100 m-0 w-100">
 					<>
 						<div className="container-fluid d-md-flex h-100 m-0 w-100">
 							<div className="row rowmenu d-md-inline-flex m-0">
@@ -37,19 +38,9 @@ function App() {
 										<Route exact path="/" element={<Home />}></Route>
 										<Route exact path="/ItemContainer/:Id" element={<ItemContainer />}></Route>
 										<Route exact path="/ItemDetailContainer/:Id" element={<ItemDetailContainer />}></Route>
+										<Route exact path="/Cart" element={<Cart />}></Route>
 									</Routes>
-									{/* <ItemContainer />
-								<br />
-								<br />
-								<br />
-								<br />
-								<br />
-								<br />
-								<p>
-									Este es el commit de la clase 7. Consumiendo APIs de acuerdo a lo que dice el profesor en la clase grabada, cumple con todas las
-									especificaciones del archivo de la presentacion
-								</p>
-								<ItemDetailContainer /> */}
+
 								</div>
 							</div>
 						</div>

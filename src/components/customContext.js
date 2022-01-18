@@ -6,10 +6,17 @@ function CustomContext({ children }) {
 
 	function addItem(value) {
 		arr.push(value);
-		console.log(arr);
 	}
 
-	function checkItem(params) {
+	function removeItem(value) {
+		let index = arr.findIndex((i) => i.id === value.id);
+
+		console.log(index);
+
+		arr.splice(index, 1);
+	}
+
+	function checkItem() {
 		return arr;
 	}
 
@@ -18,7 +25,7 @@ function CustomContext({ children }) {
 		window.dispatchEvent(event);
 	}
 
-	return <cartContext.Provider value={{ addItem, checkItem, eventHelper }}>{children}</cartContext.Provider>;
+	return <cartContext.Provider value={{ addItem, checkItem, eventHelper, removeItem }}>{children}</cartContext.Provider>;
 }
 
 export default CustomContext;

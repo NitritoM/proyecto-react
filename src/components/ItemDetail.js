@@ -19,6 +19,11 @@ const ItemDetail = (props) => {
 		console.log(value);
 	
 	};
+	const handleClick2 = () => {
+		//indow.dispatchEvent(event);
+		value.removeItem(props)
+	
+	};
 
 	return (
 		<>
@@ -37,11 +42,11 @@ const ItemDetail = (props) => {
 					Precio : <span>{props.price}</span>
 				</div>
 				<div>
-					<Contador />
-				</div>
-				<div>
 					<button type="button" className="btn btn-primary btn-sm" onClick={handleClick}>
 						Agregar al Carrito
+					</button>
+					<button type="button" className="btn btn-primary btn-sm" onClick={handleClick2}>
+						Eliminar del Carrito
 					</button>
 				</div>
 			</div>
