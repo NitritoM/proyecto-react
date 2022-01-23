@@ -6,7 +6,7 @@ import "animate.css/animate.css";
 function Navbar() {
 	const value = useContext(cartContext);
 	let auxarr = value.checkItem();
-    console.log(auxarr);
+    
 	return (
 		<ul className="list-unstyled components">
 			<li className="m-2 animate__animated animate__fadeInLeftBig">

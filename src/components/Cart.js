@@ -6,7 +6,8 @@ import Summary from "./Summary";
 const Cart = () => {
 	const value = useContext(cartContext);
 	let auxarr = value.checkItem();
-    console.log(auxarr);
+    
+	
 
 	return (
 		<>

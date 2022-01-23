@@ -12,7 +12,6 @@ const Item = (props) => {
 	const handleClick = () => {
 		//indow.dispatchEvent(event);
 		value.addItem(props)
-		console.log(value);
 	
 	};
 	
@@ -50,7 +49,7 @@ const Item = (props) => {
 						</div>
 					</div>
 					<div className="col-md-3">
-						<NavLink to={`/ItemDetailContainer/${props.id}`} className="text-decoration-none navbar__item">
+						<NavLink to={`/ItemDetailContainer/${props.name}`} className="text-decoration-none navbar__item">
 							<img className="img-fluid mx-auto d-block image" src={props.img} alt="Imagen3" />
 						</NavLink>
 					</div>

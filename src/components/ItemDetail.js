@@ -16,7 +16,7 @@ const ItemDetail = (props) => {
 	const handleClick = () => {
 		//indow.dispatchEvent(event);
 		value.addItem(props)
-		console.log(value);
+		
 	
 	};
 	const handleClick2 = () => {

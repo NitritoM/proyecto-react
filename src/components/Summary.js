@@ -1,20 +1,16 @@
 import React, { useContext } from "react";
 import cartContext from "../context/cartContext";
+import { NavLink } from "react-router-dom";
+import Checkout from "./Checkout";
 
 function Summary() {
 	const value = useContext(cartContext);
 	let auxarr = value.checkItem();
-	console.log(auxarr);
-	
-	let totalAges = auxarr.reduce((sum, value) => ( parseInt(sum) + parseInt(value.price) ), 0);
-	console.log(totalAges);
-
-	
+	let total = value.setTotal();
 
 	return (
 		<>
 			<div className="printshop__summary">
-				
 				<h3>Summary</h3>
 				<div className="summary__summary-item">
 					<span className="summary__text">Subtotal </span>
@@ -30,11 +26,13 @@ function Summary() {
 				</div>
 				<div className="summary__summary-item">
 					<span className="summary__text">Total </span>
-					<span className="summary__price">{totalAges}</span>
+					<span className="summary__price">{total}</span>
 				</div>
-				<button type="button" className="btn btn-primary btn-lg btn-block">
-					Checkout
-				</button>
+				<NavLink to={`/Checkout`} className="text-decoration-none navbar__item">
+					<button type="button" className="btn btn-primary btn-lg btn-block">
+						Checkout
+					</button>
+				</NavLink>
 			</div>
 		</>
 	);

@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemContainer from "./components/ItemContainer";
+import Checkout from "./components/Checkout";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "animate.css";
@@ -39,6 +40,7 @@ function App() {
 										<Route exact path="/ItemContainer/:Id" element={<ItemContainer />}></Route>
 										<Route exact path="/ItemDetailContainer/:Id" element={<ItemDetailContainer />}></Route>
 										<Route exact path="/Cart" element={<Cart />}></Route>
+										<Route exact path="/Checkout" element={<Checkout />}></Route>
 									</Routes>
 
 								</div>
