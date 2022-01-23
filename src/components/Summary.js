@@ -14,7 +14,7 @@ function Summary() {
 				<h3>Summary</h3>
 				<div className="summary__summary-item">
 					<span className="summary__text">Subtotal </span>
-					<span className="summary__price">{totalAges}</span>
+					<span className="summary__price">{total}</span>
 				</div>
 				<div className="summary__summary-item">
 					<span className="summary__text">Discount </span>
