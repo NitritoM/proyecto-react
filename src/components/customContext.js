@@ -1,18 +1,23 @@
 import cartContext from "../context/cartContext";
-import React from "react";
+import React, { useState } from "react";
 
 function CustomContext({ children }) {
+	const [count, setCount] = useState(0);
 	let arr = [];
 	let total = 0;
 
 	function setTotal() {
 		total = arr.reduce((sum, value) => parseInt(sum) + parseInt(value.price), 0);
-		console.log(total);
+
 		return total;
 	}
 
 	function addItem(value) {
 		arr.push(value);
+		let amount = arr.length;
+		setCount(count + amount);
+		console.log(count);
+		console.log("count");
 	}
 
 	function removeItem(value) {
@@ -28,7 +33,7 @@ function CustomContext({ children }) {
 		window.dispatchEvent(event);
 	}
 
-	return <cartContext.Provider value={{ addItem, checkItem, eventHelper, removeItem, setTotal }}>{children}</cartContext.Provider>;
+	return <cartContext.Provider value={{ addItem, checkItem, eventHelper, removeItem, setTotal, count }}>{children}</cartContext.Provider>;
 }
 
 export default CustomContext;

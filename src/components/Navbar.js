@@ -5,6 +5,7 @@ import "animate.css/animate.css";
 
 function Navbar() {
 	const value = useContext(cartContext);
+
 	let auxarr = value.checkItem();
     
 	return (
@@ -36,7 +37,8 @@ function Navbar() {
 			</li> 
 			<li className="m-2 animate__animated animate__fadeInLeftBig">
 				<NavLink to={`/Cart`} className="text-decoration-none navbar__item">
-					Carrito {auxarr.length}
+					Carrito {value.count}
+					
 				</NavLink>
 			</li> 
 			
